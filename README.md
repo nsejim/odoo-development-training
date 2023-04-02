@@ -21,16 +21,17 @@ Create the working directory with the following command
 
 Inside your working directory (~/Documents/Training/Odoo) and using your terminal,  
 - Clone the branch v16 of the remote training repo  `git clone`
-- Rename ".env.example" to ".env"   `mv .env.example .env`
+- Change directory into directory docker_deployment `cd docker_deployment`
+- Rename ".env.example" to ".env" with the command  `mv .env.example .env`
 - Launch a containerised odoo server   `docker-compose up -d`
 
 Now your Odoo instance should be running at the url http://localhost:10016. 
 You will have to define a super admin Odoo password.
 
-Additional commands to manage the odoo server
+Additional interesting commands
 - To stop the odoo server `docker-compose down`
 - To restart a running server `docker-compose restart`
-
+- To list running containers `docker-compose ps`
 
 ## CONFIGURE GIT IN THE CUSTOM MODULES DIRECTORY
 
@@ -45,3 +46,20 @@ For better collaborative development experience, it is advised to git version th
 Now, you are ready for coding your first Odoo custom module
 
 ## SCAFFOLD A CUSTOM MODULE
+
+Inside the docker_deployment directory  `~/Documents/Training/Odoo/docker_deployment`, 
+- enter into the odoo container using the following command `docker exec -it docker_deployment-odoo-1 /bin/bash`
+
+Inside the container, you can first validate that you have access to the Odoo CLI
+- check Odoo version `odoo --version`
+- show help ` odoo --help`
+
+Now, to scaffold a new custom module, you can use the Odoo CLI command `scaffold`. 
+You can check how to use it using `odoo scaffold --help`
+
+- create a custom module called "sic_training" and save it into the container "custom-addons" directory -> `odoo scaffold sic_training /mnt/custom-addons`
+
+Now if you go into your local custom-addons directory (`~/Documents/Training/Odoo/custom-addons`), you should see the new Odoo module source code. 
+You can now "commit" with a message like "scaffolded a new Odoo module". 
+
+To install the new module, first restart the odoo server (`docker-compose restart`) and then search the module in the apps list.
