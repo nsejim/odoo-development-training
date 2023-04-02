@@ -20,13 +20,13 @@ Create the working directory with the following command
 ## SETUP & LAUNCH DOCKER DEPLOYMENT ENVIRONMENT
 
 Inside your working directory (~/Documents/Training/Odoo) and using your terminal,  
-- Clone the branch v16 of the remote training repo  `git clone`
+- Clone the branch v16 of the remote training repo  `git clone --branch v16 https://github.com/nsejim/odoo-development-training.git docker_deployment`
 - Change directory into directory docker_deployment `cd docker_deployment`
 - Rename ".env.example" to ".env" with the command  `mv .env.example .env`
 - Launch a containerised odoo server   `docker-compose up -d`
 
 Now your Odoo instance should be running at the url http://localhost:10016. 
-You will have to define a super admin Odoo password.
+If a super admin Odoo password is already defined, the default one is "odoo123".
 
 Additional interesting commands
 - To stop the odoo server `docker-compose down`
