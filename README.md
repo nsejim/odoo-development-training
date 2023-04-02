@@ -26,7 +26,7 @@ Inside your working directory (~/Documents/Training/Odoo) and using your termina
 - Launch a containerised odoo server   `docker-compose up -d`
 
 Now your Odoo instance should be running at the url http://localhost:10016. 
-If a super admin Odoo password is already defined, the default one is "odoo123".
+The default master password is "odoo123".
 
 Additional interesting commands
 - To stop the odoo server `docker-compose down`
