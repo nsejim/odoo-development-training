@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [{
+        "name": "Odoo",
+        "type": "python",
+        "request": "attach",
+        "port": 10016,
+        "debugServer": 8888,
+        "host": "localhost",
+        "pathMappings": [
+            {
+                "localRoot": "~/Documents/Training/Odoo/custom-addons",
+                "remoteRoot": "/mnt/custom-addons"
+            },
+            {
+                "localRoot": "~/Documents/Training/Odoo/odoo_git",
+                "remoteRoot": "/odoo"
+            },
+        ],
+        "logToFile": true
+    }]
+}

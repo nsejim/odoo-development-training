@@ -62,4 +62,18 @@ You can check how to use it using `odoo scaffold --help`
 Now if you go into your local custom-addons directory (`~/Documents/Training/Odoo/custom-addons`), you should see the new Odoo module source code. 
 You can now "commit" with a message like "scaffolded a new Odoo module". 
 
-To install the new module, first restart the odoo server (`docker-compose restart`) and then search the module in the apps list.
+## INSTALL CUSTOM MODULE
+
+- restart the odoo server (`docker-compose restart`)
+- login in the odoo backend as admin
+- Go to apps and "Update App List"
+- Search the new module in the apps list.
+- Click on "Install"
+
+
+## DEBUG CUSTOM MODULE
+
+A debug configuration called "Odoo Custom Addons" is included to launch a debugging setup. 
+Once it is running, one can place breakpoint in the python code of the custom module.
+
+- 

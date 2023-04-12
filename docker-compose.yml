@@ -19,11 +19,11 @@ services:
     platform: linux/amd64 
     ports:
       - "${ODOO_PORT}:8069"  # web access port
-      - "${DEBUG_PORT}:8888"   # debug port
+      - "8888:8888"   # debug port
     depends_on:
       - db
     tty: true
-    command: python3 -m debugpy --listen 0.0.0.0:${DEBUG_PORT} /usr/bin/odoo --db_user=odoo --db_host=db --db_password=odoo
+    command: python3 -m debugpy --listen 0.0.0.0:8888 /usr/bin/odoo --db_user=${POSTGRES_USER} --db_host=db --db_password=${POSTGRES_PASSWORD}
     volumes:
       - "${CUSTOM_ADDONS}:/mnt/custom-addons"
       - ./etc:/etc/odoo
